@@ -19,7 +19,7 @@
 // When a button is pressed, it is grounded (logic 0)
 #define PRESSED 0
 
-
+// HAL functions
 void TurnOn_Launchpad_LED1();
 void TurnOff_Launchpad_LED1();
 char S1isPressed();
@@ -29,6 +29,7 @@ void initialize();
 
 // In this example, the high-level function, main, is readable.
 // It is also easy to port this function to other platforms with similar peripherals such as an LED and a switch
+// written based on HAL so similar to GPIO_HAL_noDriverLib
 int main(void)
 {
     // initialize all the peripherals
@@ -63,6 +64,7 @@ void initialize()
 
 void TurnOn_Launchpad_LED1()
 {
+    // this lower level is hidden from viewer
     GPIO_setOutputHighOnPin(GPIO_PORT_P1, GPIO_PIN0);
 }
 
